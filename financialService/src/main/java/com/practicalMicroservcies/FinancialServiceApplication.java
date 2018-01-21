@@ -4,10 +4,12 @@ import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
+@EnableDiscoveryClient
 @SpringBootApplication
-public class UserServiceApplication {
+public class FinancialServiceApplication {
 	@Value("${spring.datasource.url}")
 	private String url;
 	@Value("${spring.datasource.username}")
@@ -28,7 +30,7 @@ public class UserServiceApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserServiceApplication.class, args);
+		SpringApplication.run(FinancialServiceApplication.class, args);
 
 	}
 }
